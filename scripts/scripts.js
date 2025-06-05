@@ -12,10 +12,10 @@ const changeFunc = function(event){
             iframe.src='https://joyhubn.github.io/projects/pages/alerts.html';
             break;
         case 'add-elems':
-            iframe.src='https://joyhubn.github.io/projects/pages/s/new_elements.html';
+            iframe.src='https://joyhubn.github.io/projects/pages/new_elements.html';
             break;
         case 'timers':
-            iframe.src='https://joyhubn.github.io/projects/pages/pages/timers.html';
+            iframe.src='https://joyhubn.github.io/projects/pages/timers.html';
             break;
         default:
             alert('Выбери опцию');
