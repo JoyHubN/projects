@@ -5,3 +5,21 @@
 .cyan{
     color:cyan;
 }
+
+
+.tnr{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.green-border{
+    border: 3px solid rgb(2, 238, 2);
+}
+
+
+.b-w{
+    background-color: rgba(170, 170, 170, 0.311);
+}
+
+.b-n{
+    background-color: rgba(0, 0, 0 ,0.5);
+}
