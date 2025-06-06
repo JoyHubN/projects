@@ -63,6 +63,12 @@ main iframe{
 }
 
 
+#b-start{
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 1.5rem;
+}
 
 #b-alert-a, #b-alert-c, #b-alert-i{
     /* background-color: rgb(246, 255, 0); */

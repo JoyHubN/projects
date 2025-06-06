@@ -14,9 +14,15 @@ updateTime();
 
 
 bStart.onclick = function(){
+    // debugger;
     if(timerInput.value){
+        
         const time = timerInput.value.split(':');
-        let timer = setTimeout(() => alert(`Время закончилось:${time}`), (time[0]*60+time[1])*1000);
+        let timer = setTimeout(() => alert(`Время закончилось:${time}`), (time[1]*60+time[2])*1000);
     }   
+    else{
+        alert('Введите время');
+    }
+
     console.dir(timerInput.value);
 }
