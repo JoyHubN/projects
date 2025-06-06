@@ -76,3 +76,26 @@ main iframe{
 .ul-none{
     list-style: none;
 }
+
+#btn-el{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#btn-el button{
+    margin: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: 0;
+}
+
+#list-p{
+    background-color:rgba(255, 127, 80, 0.48);
+    width: 50%;
+    height: 450px;
+    overflow-y: scroll;
+    text-align: center;
+    margin: 0 auto;
+}
