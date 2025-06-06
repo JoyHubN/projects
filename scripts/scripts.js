@@ -6,16 +6,16 @@ const changeFunc = function(event){
 
     switch (option){
         case 'sorts':
-            iframe.src='https://joyhubn.github.io/projects/pages/sort.html';
+            iframe.src='../pages/sort.html';
             break;
         case 'alerts':
-            iframe.src='https://joyhubn.github.io/projects/pages/alerts.html';
+            iframe.src='../pages/alerts.html';
             break;
         case 'add-elems':
-            iframe.src='https://joyhubn.github.io/projects/pages/new_elements.html';
+            iframe.src='../pages/new_elements.html';
             break;
         case 'timers':
-            iframe.src='https://joyhubn.github.io/projects/pages/timers.html';
+            iframe.src='../pages/timers.html';
             break;
         default:
             alert('Выбери опцию');
