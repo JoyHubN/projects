@@ -5,24 +5,29 @@ body{
 #m {
     background-image: url('../images/bckg_index.jpg');
     background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
 }
 
 #menu {
-    padding: 10px;
+    padding: 1rem;
     border: 2px solid rgb(0, 255, 0);
     display: flex;
-    align-items: center; /* Вертикальное центрирование */
-    height: 100px; /* Укажите высоту контейнера, если нужно */
+    align-items: center; 
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 #hello {
     font-size: 25px;
-    margin: 0; /* Убираем стандартные отступы для точного центрирования */
+    margin: 0; 
 }
 
 #logo {
-    width: 100px;
+    width: 20vw;
+    max-width: 100px;
+    min-width: 0.5rem;
 }
 
 .center {
@@ -33,21 +38,19 @@ body{
 }
 
 #menu-list{
-    text-align: center;
-    height: 100px;
+    padding: 0.5rem;
+    width: auto;
     
 }
 
 
 
 main iframe{
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 50%;
-    height: 600px;
-    /* justify-content: center; */
-    display: flex;
-    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    height: 50vh;
+    min-height: 600px;
+    display: block;
 }
 
 
@@ -101,19 +104,75 @@ main iframe{
 }
 
 #items{
+    display: flex;
+    justify-content: space-between;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
-#l{
-    float: left;
-}
-
-#r{
-    float: right;
-}
 
 #l, #r{
-    justify-content: center;
+    flex: 1;
+    /* justify-content: center; */
     text-align: center;
     padding: 10px;
+    margin: 20px;
+    min-width: 150px;
+}
+
+@media (max-width: 640px) {
+    #m {
+        background-size: cover; 
+        background-position: center;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    #hello {
+        font-size: 1.5rem;
+    }
+
+    #menu-list {
+        width: 100%; 
+        max-width: 200px;
+        height: auto;
+    }
+
+    #logo {
+        width: 15vw;
+        max-width: 80px;
+    }
+
+    #new-array, #sort-array{
+        width: 90%;
+        flex-wrap: wrap;
+        display: flex;
+        max-height: 40vw;
+    }
+
+    header.b-n h1 {
+        font-size: 1.5rem;
+    }
+
+    button, select, input {
+        max-width: 150px;
+        font-size: 0.9rem;
+    }
+
+    main ul.ul-none, #btn-el {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #list-p, #new-array, #sort-array {
+        width: 100%;
+        min-height: 150px;
+    }
+
+    
 }
