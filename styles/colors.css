@@ -23,3 +23,12 @@
 .b-n{
     background-color: rgba(0, 0, 0 ,0.5);
 }
+
+
+#b-alert-a:hover, #b-alert-c:hover, #b-alert-i:hover{
+    background-color: rgba(229, 255, 0, 0.631);
+}    
+
+#b-alert-a:active, #b-alert-c:active, #b-alert-i:active{
+    background-color: rgba(0, 255, 68, 0.631);
+}  
