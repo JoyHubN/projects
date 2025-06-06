@@ -99,3 +99,21 @@ main iframe{
     text-align: center;
     margin: 0 auto;
 }
+
+#items{
+    margin: 10px;
+}
+
+#l{
+    float: left;
+}
+
+#r{
+    float: right;
+}
+
+#l, #r{
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}

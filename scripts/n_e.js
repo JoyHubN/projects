@@ -13,7 +13,7 @@ bAddP.onclick = function(){
     p.textContent = `Новый элемент ${listP.childNodes.length+1}`;
     listP.appendChild(p);
 }
-
+    
 bColorP.onclick = () => listP.lastChild.style.color=getRandom();
 
 bDelFP.onclick = () =>listP.firstChild.remove();
