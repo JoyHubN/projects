@@ -24,5 +24,5 @@ bStart.onclick = function(){
         alert('Введите время');
     }
 
-    console.dir(timerInput.value);
+    if(timerInput.value){console.dir(timerInput.value)};
 }
