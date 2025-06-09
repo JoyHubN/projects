@@ -14,8 +14,20 @@ bAddP.onclick = function(){
     const p = document.createElement('p');
     p.textContent = `Новый элемент ${listP.childNodes.length+1}`;
     listP.appendChild(p);
+    document.querySelectorAll('#list-p p:nth-child(2n)').forEach((element)=>element.style.backgroundColor='red');
 }
-    
+
 bColorP.onclick = () => listP.lastChild ? listP.lastChild.style.color=getRandom() : alertError('Элементов нет');
 
-bDelFP.onclick = () => listP.lastChild ? listP.firstChild.remove() : alertError('Ну ты-то элемент создай');
+bDelFP.onclick = () => {
+    if(listP.lastChild){
+        
+        listP.firstChild.remove()
+        listP.querySelectorAll('p').forEach((el, i) => {
+            el.style.backgroundColor = (i % 2 === 1) ? 'red' : null;
+        });
+    } 
+    else { 
+        alertError('Ну ты-то элемент создай')
+    }
+}
