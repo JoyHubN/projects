@@ -17,6 +17,9 @@ const changeFunc = function(event){
         case 'timers':
             iframe.src='../projects/pages/timers.html';
             break;
+        case 'bubbling':
+            iframe.src='../projects/pages/bubbling.html';
+            break;
         default:
             alert('Выбери опцию');
     }
