@@ -29,6 +29,12 @@ body{
     max-width: 100px;
     min-width: 0.5rem;
 }
+.center-margin{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
 
 .center {
     text-align: center;
