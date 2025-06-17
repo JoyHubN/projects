@@ -49,3 +49,20 @@
 #b-start:active{
     background-color: rgba(0, 255, 106, 0.631);
 }
+
+.b-white{
+    background-color: white;
+}
+
+.b-green{
+    background-color: greenyellow;
+}
+
+.b-red{
+    background-color: red;
+}
+
+.b-cyan{
+    background-color: cyan;
+}
+

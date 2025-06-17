@@ -117,6 +117,30 @@ main iframe{
 }
 
 
+#elem1, #elem2, #elem3{
+    margin: 0 auto;
+    align-content: center;
+    padding: 50px;
+
+}
+
+#elem1 {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+#elem2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+#elem3 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+
 #l, #r{
     flex: 1;
     /* justify-content: center; */
