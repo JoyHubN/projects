@@ -49,7 +49,9 @@ body{
     
 }
 
-
+#count{
+    border: 1px solid;
+}
 
 main iframe{
     margin: 20px auto;
