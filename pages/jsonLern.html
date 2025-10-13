@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/colors.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="b-w">
+    <header class="b-n">
+        <h1 class="center tnr white green-border">JSON</h1>
+    </header>
+    <main>
+        <div class="content"></div>
+        <script src="../scripts/data.js"></script>
+        <script>
+            const content = document.querySelector('.content');
+            const data = JSON.parse(JSON.stringify(dataInfo));
+            console.log(data);
+            const globalDiv = document.createElement('div');
+            data.data.forEach(element => {
+                const elementDiv = document.createElement('div');
+                const [ pId, height, width ] = [document.createElement('p'), document.createElement('p'), document.createElement('p')]
+                const image = document.createElement('img')
+                const hr = document.createElement('hr');
+
+                elementDiv.id = element.id;
+                elementDiv.classList.add('cyan');
+                pId.textContent = `ID: ${element.id}`;
+                height.textContent = `Height: ${element.height}`;
+                width.textContent = `Width: ${element.width}`;
+                image.src = element.url;
+                image.style = 'width: 200px; height: 200px;';
+                elementDiv.append(pId, height, width, image, hr);
+                content.append(elementDiv);
+            });
+        </script>
+    </main>
+    <script src="../scripts/n_e.js"></script>
+</body>
+</html>

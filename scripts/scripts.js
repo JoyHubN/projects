@@ -5,7 +5,7 @@ const changeFunc = function(event){
     const option = event.target.value;
 
     switch (option){
-        case 'sorts':
+               case 'sorts':
             iframe.src='../projects/pages/sort.html';
             break;
         case 'alerts':
@@ -19,6 +19,9 @@ const changeFunc = function(event){
             break;
         case 'bubbling':
             iframe.src='../projects/pages/bubbling.html';
+            break;
+        case 'json':
+            iframe.src='../projects/pages/jsonLern.html';
             break;
         default:
             alert('Выбери опцию');
