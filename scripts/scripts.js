@@ -4,7 +4,7 @@ const iframe = document.querySelector('main iframe');
 const changeFunc = function(event){
     const option = event.target.value;
 
-    switch (option){
+     switch (option){
                case 'sorts':
             iframe.src='../projects/pages/sort.html';
             break;
@@ -22,6 +22,8 @@ const changeFunc = function(event){
             break;
         case 'json':
             iframe.src='../projects/pages/jsonLern.html';
+        case 'class':
+            iframe.src='../projects/pages/jsonLern2.html';
             break;
         default:
             alert('Выбери опцию');

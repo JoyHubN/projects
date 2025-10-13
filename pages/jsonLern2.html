@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/colors.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="b-w">
+    <header class="b-n">
+        <h1 class="center tnr white green-border">JSON</h1>
+    </header>
+    <main>
+        <input id="from" type="text">
+        В инпуте написано: <span></span>
+        <br>
+        <button class="messageBtn">Показать блок</button>
+        <div class="message">
+            Привет :)
+        </div>
+        <br>
+        <form>
+            <label>
+                Первый инпут:
+                <input class="form-control" type="text">
+            </label>
+            <br>
+            <br>
+            <label>
+                Второй инпут:
+                <select class="form-control">
+                    <option value=""></option>
+                    <option value="1">Один</option>
+                    <option value="2">Два</option>
+                </select>
+            </label>
+            <br>
+            <br><button>Отправить</button>
+        </form>
+        <script>
+            const input = document.getElementById('from');
+            const messageBtn = document.querySelector('.messageBtn');
+            const sendForm = document.querySelector('form');
+
+            const editSpan = (event)=>{
+                const span = document.querySelector('span');
+                span.textContent = event.target.value;
+            }
+
+            const editClass = ()=>{
+                const message = document.querySelector('.message');
+                message.classList.add('animate_animated', 'animate_fadeInLeftBig')
+                message.style.visibility = 'visible';
+            }
+
+            const checkForm = (event)=>{
+                event.preventDefault();
+                
+                const inputFormControl = document.querySelector('input.form-control');
+                const selectFormControl = document.querySelector('select.form-control');
+
+                inputFormControl.value.length == 0 ?
+                    inputFormControl.classList.add('error'):
+                    inputFormControl.classList.remove('error')
+
+                selectFormControl.value.length == 0?
+                    selectFormControl.classList.add('error'):
+                    selectFormControl.classList.remove('error')
+
+                if(!inputFormControl.classList.contains('error') && !selectFormControl.classList.contains('error')){
+                    sendForm.submit()
+                }
+            }
+            input.addEventListener('input', editSpan);
+            messageBtn.onclick = editClass;
+            sendForm.addEventListener('submit', checkForm);
+        </script>
+    </main>
+</body>
+</html>
