@@ -22,6 +22,7 @@ const changeFunc = function(event){
             break;
         case 'json':
             iframe.src='../projects/pages/jsonLern.html';
+            break
         case 'class':
             iframe.src='../projects/pages/jsonLern2.html';
             break;
