@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/colors.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/figma/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body class="b-w">
+    <header class="b-n">
+        <h1 class="center tnr white green-border">FIGMA</h1>
+    </header>
+    <main>
+        <div class="cart-box"></div>
+    </main>
+    <script src="../data/data2.js"></script>
+    <script>
+        const data = JSON.parse(dataProduct);
+        const item = document.querySelector('.cart-box');
+
+        data.forEach(element => {
+            const [divItem, divItemContent, divQuantity] = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
+            const [p1, p2, p3, p4, span] = [document.createElement('p'), document.createElement('p'), document.createElement('p'), document.createElement('p'), document.createElement('span')];
+            const input = document.createElement('input');
+            const h3 = document.createElement('h3');
+            const image = document.createElement('img');
+
+            console.log(element.name)
+
+
+            divItem.className = 'item';
+            
+            image.className = 'image';
+            image.src = element.url;
+            
+            divItem.className = 'item';
+            divItem.appendChild(image);
+
+            divItemContent.classList = 'item_content';
+            h3.className = 'item__heading';
+            h3.textContent = element.name
+            
+            p1.className = 'item__text';
+            p1.textContent = `PRICE: `;
+            span.textContent = `$${element.price}`;
+            span.className = 'item__color';
+            p1.appendChild(span);
+            
+            p2.textContent = `COLOR: ${element.color}`;
+            p2.className = 'item__text';
+            
+            p3.textContent = `SIZE: ${element.size}`;
+            p3.className = 'item__text';
+            
+            p4.className = 'item__text';
+            p4.textContent = `QUANTITY: `;
+            divQuantity.className = 'item__quantity';
+            input.className = 'item__input'
+            input.type = 'text';
+            input.value = element.quantity;
+            p4.appendChild(input)
+            divQuantity.appendChild(p4);
+
+            divItemContent.append(h3, p1, p2, p3, divQuantity);
+            divItem.appendChild(divItemContent);
+            item.appendChild(divItem);
+        });
+    </script>
+</body>
+</html>

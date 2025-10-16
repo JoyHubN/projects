@@ -26,6 +26,10 @@ const changeFunc = function(event){
         case 'class':
             iframe.src='../projects/pages/jsonLern2.html';
             break;
+        case 'figma1': {
+            iframe.src='../projects/pages/figma1.html';
+            break;
+        }
         default:
             alert('Выбери опцию');
     }
