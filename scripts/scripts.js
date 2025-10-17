@@ -30,6 +30,10 @@ const changeFunc = function(event){
             iframe.src='../projects/pages/figma1.html';
             break;
         }
+        case 'video-player11': {
+            iframe.src = '../projects/pages/video-player11.html';
+            break;
+        }
         default:
             alert('Выбери опцию');
     }
