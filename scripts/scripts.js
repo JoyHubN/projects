@@ -35,7 +35,7 @@ const changeFunc = function(event){
             break;
         }
         case 'bom1': {
-            iframe.src = '../pages/bom1.html';
+            iframe.src = '../projects/pages/bom1.html';
             break;
         }
         case 'bom2': {
