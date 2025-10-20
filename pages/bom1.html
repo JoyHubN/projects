@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/colors.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .window-size {
+            margin: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .history-controls {
+            margin: 20px;
+            text-align: center;
+        }
+        .history-controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .history-controls button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="b-w">
+    <header class="b-n">
+        <h1 class="center tnr white green-border">Демонстрация Browser Object Model</h1>
+    </header>
+    <main>
+        <div class="window-size">
+            <h2>Размер окна</h2>
+            <p id="sizeDisplay">Ширина: 0px, Высота: 0px</p>
+        </div>
+        <div class="history-controls">
+            <button id="backBtn">Назад</button>
+            <button id="forwardBtn">Вперед</button>
+        </div>
+    </main>
+    <script>
+        function updateWindowSize() {
+            const targetWindow = window.parent && window.parent !== window ? window.parent : window;
+            const width = targetWindow.innerWidth;
+            const height = targetWindow.innerHeight;
+            document.getElementById('sizeDisplay').textContent = 
+                `Ширина: ${width}px, Высота: ${height}px`;
+        }
+
+        window.addEventListener('load', () => {
+            updateWindowSize();
+        });
+
+        window.addEventListener('resize', () => {
+            updateWindowSize();
+        });
+
+        window.addEventListener('beforeunload', function(e) {
+            const confirmationMessage = 'Вы уверены, что хотите покинуть страницу?';
+            e.returnValue = confirmationMessage;
+            return confirmationMessage;
+        });
+
+        const backBtn = document.getElementById('backBtn');
+        const forwardBtn = document.getElementById('forwardBtn');
+
+        backBtn.addEventListener('click', () => {
+            window.history.back();
+        });
+
+        forwardBtn.addEventListener('click', () => {
+            window.history.forward();
+        });
+
+        function updateButtonStates() {
+            backBtn.disabled = window.history.length <= 1;
+            forwardBtn.disabled = true;
+        }
+
+        window.addEventListener('popstate', updateButtonStates);
+        window.addEventListener('load', updateButtonStates);
+    </script>
+</body>
+</html>

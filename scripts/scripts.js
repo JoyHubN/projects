@@ -34,9 +34,28 @@ const changeFunc = function(event){
             iframe.src = '../projects/pages/video-player11.html';
             break;
         }
+        case 'bom1': {
+            iframe.src = '../pages/bom1.html';
+            break;
+        }
+        case 'bom2': {
+            iframe.src = '../projects/pages/bom2.html';
+            break;
+        }
+
+        case 'bom3': {
+            iframe.src = '../projects/pages/bom3.html';
+            break;
+        }
+
+        case 'bom4': {
+            iframe.src = '../projects/pages/bom4.html';
+            break;
+        }
         default:
             alert('Выбери опцию');
     }
 }
 
 menuList.addEventListener('change', changeFunc);
+

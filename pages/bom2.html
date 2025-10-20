@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/colors.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .controls {
+            margin: 20px;
+            text-align: center;
+        }
+        .controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #45a049;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="b-w">
+    <header class="b-n">
+        <h1 class="center tnr white green-border">Динамическое управление элементами</h1>
+    </header>
+    <main>
+        <div class="controls">
+            <button id="addBtn">Добавить элемент</button>
+            <button id="removeBtn">Удалить элемент</button>
+            <button id="cloneBtn">Клонировать элемент</button>
+        </div>
+        <div class="box-container" id="boxContainer">
+            <!-- Элементы будут добавляться сюда -->
+        </div>
+    </main>
+    <script>
+        let boxCounter = 0;
+
+        const addBtn = document.getElementById('addBtn');
+        const removeBtn = document.getElementById('removeBtn');
+        const cloneBtn = document.getElementById('cloneBtn');
+        const boxContainer = document.getElementById('boxContainer');
+
+        addBtn.addEventListener('click', () => {
+            boxCounter++;
+            const newBox = document.createElement('div');
+            newBox.className = 'box';
+            newBox.textContent = `Элемент ${boxCounter}`;
+            boxContainer.appendChild(newBox);
+        });
+
+        removeBtn.addEventListener('click', () => {
+            const lastBox = boxContainer.lastChild;
+            if (lastBox) {
+                boxContainer.removeChild(lastBox);
+                if (lastBox.textContent.startsWith('Элемент')) {
+                    boxCounter--;
+                }
+            }
+        });
+
+        cloneBtn.addEventListener('click', () => {
+            const lastBox = boxContainer.lastChild;
+            if (lastBox) {
+                const clonedBox = lastBox.cloneNode(true);
+                boxContainer.appendChild(clonedBox);
+            }
+        });
+    </script>
+</body>
+</html>
